@@ -1,0 +1,67 @@
+<div class="section-intro section">
+        <div class="container">
+            <div class="row z-depth-3 special-row">
+                <div class="col s12 m5 center-align">
+                    {{#if owner.avatar}}
+                    <img src="data:image/png;base64,{{owner.avatar}}" class="responsive-img circle" alt="user-image">
+                    {{else}}
+                    <img src="/img/user.png" alt="user-image" class="responsive-img circle">
+                    {{/if}}
+                </div>
+                <div class="col s12 m7 center-align">
+                    <h5>{{owner.name}}</h5>
+                    <p class="grey-text text-darken-2">
+                        {{owner.interest}}
+                    </p>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="section-public section">
+    <div class="container">
+        <div class="row">
+            {{#each images}}
+            <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{path}}" class="materialboxed">
+                            {{#if (profileOwner user ../user)}}
+                            <form action="/images/{{this._id}}" method="POST" id="delete-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn red btn-floating btn-small halfway-fab waves-effect waves-light">
+                                    <i class="fas fa-trash"></i> 
+                                </button>
+                            </form>
+                            {{/if}}
+                            <a href="/images/download/{{_id}}" class="btn-floating btn-small halfway-fab waves-effect waves-light red left"><i
+                                    class="material-icons">cloud_download</i></a>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-tabs">
+                                <ul class="tabs tabs-fixed-width">
+                                    <li class="tab"><a class="active" href="#{{uuid1}}">Owner</a></li>
+                                    <li class="tab"><a href="#{{uuid2}}">Caption</a></li>
+                                </ul>
+                            </div>
+                            <div class="card-content grey lighten-4">
+                                <div id="{{uuid1}}">
+                                    <div class="chip">
+                                        {{#if user.avatar}}
+                                        <img src="data:image/png;base64,{{user.avatar}}" alt="">
+                                        {{else}}
+                                        <img src="/img/user.png" alt="">
+                                        {{/if}}
+                                        <a href="/user/profile/{{user._id}}">{{user.name}}</a>
+                                    </div>
+                                </div>
+                                <div id="{{uuid2}}">{{caption}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{else}}
+                <h4>You haven't added any public images</h4>
+                {{/each}}
+        </div>
+    </div>
+</div>

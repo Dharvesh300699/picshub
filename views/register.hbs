@@ -1,0 +1,31 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <span class="pink">Pics</span>hub
+      </h1>
+      {{>_messages}}
+      <form action="/register" method="POST">
+        <div class="form-group">
+          <input type="name" id="name" name="name" class="form-control" placeholder="Name" autocomplete="off" value="{{#if name}}{{name}}{{/if}}"/>
+        </div>
+        <div class="form-group">
+          <input type="name" id="username" name="username" class="form-control" placeholder="Username" autocomplete="off" value="{{#if username}}{{username}}{{/if}}"/>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" class="form-control" placeholder="Email" autocomplete="off" value="{{#if email}}{{email}}{{/if}}"/>
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" name="password" class="form-control" placeholder="Create Password" value="{{#if password}}{{password}}{{/if}}"/>
+        </div>
+        <div class="form-group">
+          <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" value="{{#if password2}}{{password2}}{{/if}}"/>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block submit">
+          Register
+        </button>
+      </form>
+      <p class="lead mt-4">Have An Account? <a href="/login">Login</a></p>
+    </div>
+  </div>
+</div>

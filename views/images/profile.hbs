@@ -1,0 +1,41 @@
+<div class="section">
+    <div class="container">
+        <h3>Edit profile</h3>
+<div class="row">
+    <form action="/user/update" method="POST" enctype="multipart/form-data" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <i class="material-icons prefix pink-text">mode_edit</i>
+                <input type="text" id="name" name="name" autocomplete="off" value="{{profileOwner.name}}">
+                <label for="name">Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <i class="material-icons prefix pink-text">mode_edit</i>
+                <input type="text" id="interest" name="interest" autocomplete="off" maxlength="150" data-length="150" value="{{profileOwner.interest}}">
+                <label for="interest">Interest</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="file-field input-field">
+                <div class="btn pink">
+                    <span>Add avatar</span>
+                    <input type="file" name="avatar">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="{{error}}">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Update" class="btn pink">
+            <a href="/user/dashboard" class="btn pink darken-1">Cancel</a>
+        </div>
+    </form>
+</div>
+    </div>
+</div>

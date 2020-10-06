@@ -1,0 +1,15 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <p class="text-center mb-3 large-text">Sorry your token expired!</p>
+      <p class="text-center mb-3">We'll need to resend verification email to you<p>
+      {{>_messages}}
+      <form action="/resend" method="POST">
+        <div class="form-group">
+          <input type="email" id="email" name="email" class="form-control" placeholder="Email" autocomplete="off"/>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block submit">Re-send verification email</button>
+      </form>
+    </div>
+  </div>
+</div>

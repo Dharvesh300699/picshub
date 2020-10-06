@@ -1,0 +1,44 @@
+<div class="section">
+    <div class="container">
+        <h3>Add image</h3>
+<div class="row">
+    <form action="/images" method="POST" enctype="multipart/form-data" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <i class="material-icons prefix pink-text">mode_edit</i>
+                <input type="text" id="caption" name="caption" autocomplete="off" maxlength="120" data-length="120">
+                <label for="caption">Caption</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <i class="material-icons prefix pink-text">filter</i>
+                <select id="status" name="status">
+                    <option value="public" selected>Public</option>
+                    <option value="private">Private</option>
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="file-field input-field">
+                <div class="btn pink">
+                    <span>Add</span>
+                    <input type="file" name="image" required>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="{{error}}">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Add" class="btn pink">
+            <a href="/user/dashboard" class="btn pink darken-1">Cancel</a>
+        </div>
+    </form>
+</div>
+    </div>
+</div>

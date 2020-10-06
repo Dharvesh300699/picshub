@@ -1,0 +1,40 @@
+<div class="section-public section">
+    <div class="container">
+        <div class="row">
+            {{#each images}}
+            <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{path}}" class="materialboxed">
+                            <a href="/images/download/{{_id}}" class="btn-floating btn-small halfway-fab waves-effect waves-light red"><i
+                                    class="material-icons">cloud_download</i></a>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-tabs">
+                                <ul class="tabs tabs-fixed-width">
+                                    <li class="tab"><a class="active" href="#{{uuid1}}">Owner</a></li>
+                                    <li class="tab"><a href="#{{uuid2}}">Caption</a></li>
+                                </ul>
+                            </div>
+                            <div class="card-content grey lighten-4">
+                                <div id="{{uuid1}}">
+                                    <div class="chip">
+                                        {{#if user.avatar}}
+                                        <img src="data:image/png;base64,{{user.avatar}}" alt="profile-image">
+                                        {{else}}
+                                        <img src="img/me.jpg" alt="profile-image">
+                                        {{/if}}
+                                        <a href="/user/profile/{{user._id}}">{{this.user.name}}</a>
+                                    </div>
+                                </div>
+                                <div id="{{uuid2}}">{{caption}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{else}}
+                <h4>No public images</h4>
+                {{/each}}
+        </div>
+    </div>
+</div>

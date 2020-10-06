@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.brand-logo {
+  font-family: "Lobster", cursive !important;
+  letter-spacing: 3px !important;
+  font-weight: 300;
+}
+
+.column {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tabs a {
+  padding: 0 !important;
+}
+
+.material-placeholder {
+  margin: 5px;
+}
+
+.special-row {
+  min-height: 190px;
+  max-width: 600px;
+  border-radius: 10px !important;
+  padding: 8px 5px !important;
+}
+
+.special-row img {
+  max-width: 150px !important;
+}
+
+.dashboard-row {
+  margin: 10px 0 !important;
+  max-height: 250px;
+  max-width: 700px;
+  border-radius: 10px !important;
+  padding: 8px 5px !important;
+}
+
+.section-public .card {
+  border-radius: 10px !important;
+}
+
+.section-public .card .card-image img {
+  border-radius: 10px !important;
+}
+
+.text {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.section-tabs form {
+  display: inline;
+}
+
+@media (max-width: 500px) {
+  .section-tabs .btn {
+    padding: 0 5px;
+    line-height: 20px;
+    height: 20px;
+  }
+
+  .section-tabs .btn i {
+    padding: 0;
+  }
+
+  .special-row img {
+    max-width: 100px !important;
+  }
+}

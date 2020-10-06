@@ -1,0 +1,21 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3"><span class="pink">Pics</span>hub</h1>
+      {{>_messages}}
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <input type="text" id="email" name="username" class="form-control" placeholder="Username or email" autocomplete="off" required />
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" name="password" class="form-control" placeholder="Password" required/>
+        </div>
+        <p class="text-right mb-2"><a href="/forgot">Forgot password?</a></p>
+        <button type="submit" class="btn btn-primary btn-block submit">Login</button>
+      </form>
+      <p class="lead mt-4">
+        No Account? <a href="/register">Register</a>
+      </p>
+    </div>
+  </div>
+</div>

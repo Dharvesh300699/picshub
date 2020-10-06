@@ -1,0 +1,26 @@
+<nav class="pink">
+    <div class="nav-wrapper container">
+        <a href="#" class="brand-logo center">Picshub</a>
+        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+    </div>
+</nav>
+
+<ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="/img/background.jpg" class="responsive-img">
+      </div>
+      {{#if user.avatar}}
+      <a href="#user"><img class="circle" src="data:image/png;base64,{{user.avatar}}"></a>
+      {{else}}
+      <a href="#user"><img class="circle" src="/img/user.png"></a>
+      {{/if}}
+      <a href="#name"><span class="white-text name">{{user.name}}</span></a>
+      <a href="#email"><span class="white-text email">{{user.email}}</span></a>
+    </div></li>
+    <li><a href="/user/dashboard"><i class="material-icons pink-text">home</i>Home</a></li>
+    <li><a href="/images"><i class="material-icons pink-text">public</i>Public pics</a></li>
+    <li><a href="/user/profile/{{user._id}}"><i class="material-icons pink-text">people</i>Public profile</a></li>
+    <li><a href="/user/update"><i class="material-icons pink-text">edit</i>Edit profile</a></li>
+    <li><a href="/logout"><i class="material-icons pink-text">exit_to_app</i>Logout</a></li>
+  </ul>

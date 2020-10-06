@@ -1,0 +1,87 @@
+<div class="section section-tabs">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <ul id="tabs-swipe-demo" class="tabs">
+                        <li class="tab col s3"><a class="active" href="#test-swipe-1">Gallery</a></li>
+                        <li class="tab col s3"><a href="#test-swipe-2">Public</a></li>
+                        <li class="tab col s3"><a href="#test-swipe-3">Private</a></li>
+                    </ul>
+                </div>
+                <div id="test-swipe-1" class="col s12">
+                    <h4 class="center">
+                        <span class="pink-text">Photo </span>
+                        Gallery
+                    </h4>
+                    <div class="row">
+                        {{#each images}}
+                        <div class="col s12 m3">
+                            <img src="{{this.path}}" alt=""
+                                class="materialboxed responsive-img">
+                        </div>
+                        {{else}}
+                        <h4>You haven't added any images</h4>
+                        {{/each}}
+                    </div>
+                </div>
+                <div id="test-swipe-2" class="col s12">
+                    {{#each images}}
+                        {{#if (isPublic this)}}
+                            <div class="row dashboard-row valign-wrapper z-depth-3">
+                                <div class="col s5 l5 column">
+                                    <img src="{{this.path}}" class="materialboxed responsive-img"
+                                        data-caption="{{formatDate createdAt 'MMMM Do YYYY'}}" alt="">
+                                </div>
+                                <div class="col l6">
+                                    <p class="hide-on-small-only">{{formatDate createdAt 'MMMM Do YYYY'}}</p>
+                                    <p class="hide-on-med-and-down">
+                                        {{this.caption}}
+                                    </p>
+                                </div>
+                                <div class="col s7 l1 center-align text">
+                                    <p class="hide-on-med-and-up">{{formatDate createdAt 'MMMM Do YYYY'}}</p>
+                                    <form action="/images/{{this._id}}" method="POST" id="delete-form">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn red">
+                                            <i class="fas fa-trash"></i> 
+                                        </button>
+                                    </form>
+                                    <a href="/images/download/{{this._id}}" class="waves-effect waves-light btn green"><i class="material-icons">cloud_download</i></a>
+                                    <a href="/images/edit/{{this._id}}" class="waves-effect waves-light btn blue"><i class="material-icons">edit</i></a>
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+                <div id="test-swipe-3" class="col s12">
+                    {{#each images}}
+                        {{#if (isPrivate this)}}
+                            <div class="row dashboard-row valign-wrapper z-depth-3">
+                                <div class="col s5 l5 column">
+                                    <img src="{{this.path}}" class="materialboxed responsive-img"
+                                        data-caption="{{formatDate createdAt 'MMMM Do YYYY'}}" alt="">
+                                </div>
+                                <div class="col l6">
+                                    <p class="hide-on-small-only">{{formatDate createdAt 'MMMM Do YYYY'}}</p>
+                                    <p class="hide-on-med-and-down">
+                                        {{this.caption}}
+                                    </p>
+                                </div>
+                                <div class="col s7 l1 center-align text">
+                                    <p class="hide-on-med-and-up">{{formatDate createdAt 'MMMM Do YYYY'}}</p>
+                                    <form action="/images/{{this._id}}" method="POST" id="delete-form">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn red">
+                                            <i class="fas fa-trash"></i> 
+                                        </button>
+                                    </form>
+                                    <a href="/images/download/{{this._id}}" class="waves-effect waves-light btn green"><i class="material-icons">cloud_download</i></a>
+                                    <a href="/images/edit/{{this._id}}" class="waves-effect waves-light btn blue"><i class="material-icons">edit</i></a>
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>

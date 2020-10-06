@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 15px;
+}
+h1 {
+  font-family: "Lobster", cursive !important;
+  letter-spacing: 3px !important;
+  font-weight: 300;
+}
+.btn {
+  color: #fff !important;
+  border-radius: 50px !important;
+}
+
+.close:focus {
+  outline: none;
+}
+
+input {
+  border-radius: 50px !important;
+}
+
+.btn-primary {
+  background: #ec407a !important;
+}
+
+.btn-secondary {
+  background: #f06292 !important;
+}
+
+.pink {
+  color: #f06292 !important;
+}
+
+.submit {
+  letter-spacing: 1px;
+}
+
+.large-text {
+  font-size: 23px;
+  font-weight: 500;
+}
