@@ -13,7 +13,7 @@ router.get("/add", ensureAuth, (req, res) => {
 
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, "../public/uploads/"));
+    cb(null, path.join(__dirname, "/public/uploads/"));
   },
   filename: function (req, file, cb) {
     const uniqueName = `${Date.now()}-${Math.round(
