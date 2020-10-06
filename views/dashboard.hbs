@@ -16,7 +16,7 @@
                     <div class="row">
                         {{#each images}}
                         <div class="col s12 m3">
-                            <img src="{{this.path}}" alt=""
+                            <img src="/{{this.path}}" alt=""
                                 class="materialboxed responsive-img">
                         </div>
                         {{else}}
@@ -29,7 +29,7 @@
                         {{#if (isPublic this)}}
                             <div class="row dashboard-row valign-wrapper z-depth-3">
                                 <div class="col s5 l5 column">
-                                    <img src="{{this.path}}" class="materialboxed responsive-img"
+                                    <img src="/{{this.path}}" class="materialboxed responsive-img"
                                         data-caption="{{formatDate createdAt 'MMMM Do YYYY'}}" alt="">
                                 </div>
                                 <div class="col l6">
@@ -58,7 +58,7 @@
                         {{#if (isPrivate this)}}
                             <div class="row dashboard-row valign-wrapper z-depth-3">
                                 <div class="col s5 l5 column">
-                                    <img src="{{this.path}}" class="materialboxed responsive-img"
+                                    <img src="/{{this.path}}" class="materialboxed responsive-img"
                                         data-caption="{{formatDate createdAt 'MMMM Do YYYY'}}" alt="">
                                 </div>
                                 <div class="col l6">

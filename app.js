@@ -100,7 +100,7 @@ app.use((req, res, next) => {
 });
 
 // Static assests
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "uploads")));
 
 // Routes
 app.use("/", require("./routes/auth"));

@@ -10,7 +10,7 @@ router.get("/dashboard", ensureAuth, async (req, res) => {
       .sort({ createdAt: "desc" })
       .lean();
     images.forEach((element) => {
-      element.path = `/uploads/${element.filename}`;
+      element.path = element.filename;
     });
     res.render("dashboard", {
       name: req.user.name,
@@ -88,7 +88,7 @@ router.get("/profile/:userId", ensureAuth, async (req, res) => {
       .lean();
 
     images.forEach((element) => {
-      element.path = `/uploads/${element.filename}`;
+      element.path = element.filename;
       if (element.user.avatar) {
         element.user.avatar = element.user.avatar.toString("base64");
       }

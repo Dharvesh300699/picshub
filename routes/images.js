@@ -13,7 +13,7 @@ router.get("/add", ensureAuth, (req, res) => {
 
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, "/public/uploads/"));
+    cb(null, "uploads/");
   },
   filename: function (req, file, cb) {
     const uniqueName = `${Date.now()}-${Math.round(
@@ -75,7 +75,7 @@ router.get("/", ensureAuth, async (req, res) => {
       .lean();
 
     images.forEach((element) => {
-      element.path = `/uploads/${element.filename}`;
+      element.path = element.filename;
       if (element.user.avatar) {
         element.user.avatar = element.user.avatar.toString("base64");
       }
@@ -100,7 +100,7 @@ router.delete("/:id", ensureAuth, async (req, res) => {
       return res.redirect("/user/dashboard");
     } else {
       fs.unlink(
-        path.join(__dirname, `../public/uploads/${image.filename}`),
+        path.join(__dirname, `../uploads/${image.filename}`),
         (error) => {
           if (error) {
             throw error;
@@ -123,7 +123,7 @@ router.get("/download/:id", ensureAuth, async (req, res) => {
     if (!image) {
       return res.render("error/404");
     }
-    const file = path.join(__dirname, `../public/uploads/${image.filename}`);
+    const file = path.join(__dirname, `../uploads/${image.filename}`);
     res.download(file);
   } catch (error) {
     res.render("error/500");
